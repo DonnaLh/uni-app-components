@@ -10,7 +10,7 @@
 </template>
 
 <script>
-	import cardTabs from '../components/lh-card-tabs/lh-card-tabs'
+	import cardTabs from './lh-card-tabs'
 	export default {
 		data() {
 			return {
