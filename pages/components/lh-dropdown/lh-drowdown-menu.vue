@@ -38,6 +38,8 @@
    .dropdown-menu{
        display: flex;
        background: #ffffff;
+       overflow-x: auto;
+       white-space: nowrap;
        position: relative;
        justify-content: space-between;
    }

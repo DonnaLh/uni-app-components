@@ -2,6 +2,7 @@
 	<view class="content">
 		<dropDownMenu>
 			<drop-down-item  v-model="type" :options="list"/>
+			<drop-down-item  v-model="type" :options="list" icon-type="arrow"/>
 			<drop-down-item :onCloseModal="false"  :options="list1"/>
 			<drop-down-item :modal="false" activeColor="red" :options="list"/>
 		</dropDownMenu>

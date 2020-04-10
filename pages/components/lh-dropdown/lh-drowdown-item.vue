@@ -5,9 +5,9 @@
               @click="selectOptions"
         >
             <text>{{title}}</text>
-            <text class="iconfont" :class="[showList ? 'icon-shangjiantou' : 'icon-xiajiantou']" :style="{'color': color}" style="margin-left: 4rpx;"/>
+            <text class="iconfont" :class="[showList ? 'up' : 'down', iconType === 'solid-arrow' ? 'icon-xiajiantou' : 'icon-arrow-down']" :style="{'color': color}" style="margin-left: 4rpx;"/>
         </view>
-        <view class="drop-item_content" :style="{'top': top+'rpx', 'color': color, 'font-size': fontSize}" v-show="showList">
+        <view class="drop-item_content" :style="{'top': Number(top)*2+'rpx', 'color': color, 'font-size': fontSize}" v-show="showList">
             <view
                     v-for="(item, index) in options"
                     :key="index"
@@ -69,6 +69,10 @@
             activeColor: {
                 type: String,
                 default: '#1989fa'
+            },
+            iconType: {
+                type: String,
+                default: 'solid-arrow' // 两种类型， 实心箭头 solid-arrow，和空箭头 arrow
             }
         },
         methods: {
@@ -120,14 +124,22 @@
             align-items: center;
             justify-content: center;
             background: #ffffff;
+            .down {
+                transition: transform .3s;
+                transform: rotateZ(0);
+            }
+            .up {
+                transition: transform .3s;
+                transform: rotateZ(-180deg);
+            }
         }
         .drop-item_content{
-            position: absolute;
+            position: fixed;
             width: 100%;
             left: 0;
             right: 0;
             align-items: center;
-            z-index: 2;
+            z-index: 6;
             transition: 2s;
             &-list{
                 display: flex;
