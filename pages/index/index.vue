@@ -1,10 +1,16 @@
 <template>
 	<view class="content">
-		<dropDownMenu @close="close">
+		<dropDownMenu>
 			<drop-down-item  v-model="type" :options="list"/>
 			<drop-down-item :onCloseModal="false"  :options="list1"/>
 			<drop-down-item :modal="false" activeColor="red" :options="list"/>
 		</dropDownMenu>
+		<ms-drop-down-menu>
+			<ms-drop-down-item :list="list" v-model="type"/>
+			<ms-drop-down-item :list="list" v-model="type"/>
+			<ms-drop-down-item :list="list" v-model="type"/>
+			<ms-drop-down-item :list="list" v-model="type"/>
+		</ms-drop-down-menu>
 		<cardTabs
 				:tabsTitle="tabsTitle"
 				v-model="type"
@@ -19,6 +25,8 @@
 	import cardTabs from '../components/lh-card-tabs/lh-card-tabs'
 	import dropDownMenu from '../components/lh-dropdown/lh-drowdown-menu'
 	import dropDownItem from '../components/lh-dropdown/lh-drowdown-item'
+	import msDropDownMenu from '../../components/ms-dropdown/dropdown-menu'
+	import msDropDownItem from '../../components/ms-dropdown/dropdown-item'
 	export default {
 		data() {
 			return {
@@ -77,20 +85,16 @@
 			}
 		},
 		components: {
-			cardTabs, dropDownMenu, dropDownItem
+			cardTabs, dropDownMenu, dropDownItem, msDropDownMenu, msDropDownItem
 		},
 		onLoad() {
 
 		},
 		methods: {
 			tabChange(item){
-			},
-			closeDropdown(){
 			}
 		},
 		mounted() {
-			this.$on('close', ()=>{
-			})
 		},
 	}
 </script>

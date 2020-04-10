@@ -1,7 +1,7 @@
 <template>
-    <view class="dropdown-menu" :style="{'height': height+'rpx', 'line-height': lineHeight+'rpx'}">
+    <div class="dropdown-menu" :style="{'height': height+'rpx', 'line-height': lineHeight+'rpx'}">
       <slot :top="height"></slot>
-    </view>
+    </div>
 </template>
 
 <script>
@@ -23,7 +23,6 @@
         },
         methods: {
             closeDropdown() {
-                console.log(1918182)
                 this.$children.forEach(item =>{
                     item.close();
                 })

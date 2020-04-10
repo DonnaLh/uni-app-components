@@ -28,7 +28,8 @@
             return {
                 title: '',
                 showList: false,
-                activeIndex: 1
+                activeIndex: 1,
+                active: false
             }
         },
         watch: {
@@ -83,12 +84,12 @@
                 this.showList = false
             },
             selectOptions(){
-                this.showList = !this.showList
-                // this.$parent.$emit('close');
-                this.$emit.closeDropdown();
+                this.active = !this.showList
+                this.$parent.$emit('close');
+                this.showList = this.active;
             },
             selectHandle(item){
-                this.activeIndex = item.value
+                this.activeIndex = item.value;
                 this.title = item.text;
                 this.showList = false;
                 this.$emit('input', item.value);
