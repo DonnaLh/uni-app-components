@@ -59,6 +59,11 @@
                 activeType: ''
             }
         },
+        watch: {
+            value(newVal){
+                this.activeType = newVal
+            }
+        },
         methods: {
             tabChange(item){
                 this.activeType = item.type;
