@@ -1,5 +1,6 @@
 <template>
 	<view class="content">
+		<uni-notice-bar showClose="true" showIcon="true" text="这是 NoticeBar 通告栏，这是 NoticeBar 通告栏，这是 NoticeBar 通告栏"></uni-notice-bar>
 		<dropDownMenu>
 			<drop-down-item  v-model="type" :options="list"/>
 			<drop-down-item  v-model="type" :options="list" icon-type="arrow"/>
@@ -28,6 +29,7 @@
 	import dropDownItem from '../components/lh-dropdown/lh-drowdown-item'
 	import msDropDownMenu from '../../components/ms-dropdown/dropdown-menu'
 	import msDropDownItem from '../../components/ms-dropdown/dropdown-item'
+	import uniNoticeBar from '@/components/uni-notice-bar/uni-notice-bar.vue'
 	export default {
 		data() {
 			return {
@@ -86,7 +88,7 @@
 			}
 		},
 		components: {
-			cardTabs, dropDownMenu, dropDownItem, msDropDownMenu, msDropDownItem
+			cardTabs, dropDownMenu, dropDownItem, msDropDownMenu, msDropDownItem, uniNoticeBar
 		},
 		onLoad() {
 
